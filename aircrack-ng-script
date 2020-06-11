@@ -1,0 +1,37 @@
+#!/bin/bash
+
+intro="\n
+---------------------------------\n
+~~~~~~~~~~ aircrack-ng ~~~~~~~~~~\n
+---------------------------------\n
+~~~~~~~~~~~~~ xterm ~~~~~~~~~~~~~\n
+---------------------------------\n
+~~~~~~~~~~~~ by SKN ~~~~~~~~~~~~~\n
+---------------------------------\n"
+
+
+
+clear
+echo -e $intro
+echo
+
+
+echo -e "Enter Your CAP File Location ? ex: root/EXAMPLE_WIFI.cap"
+echo
+echo -n "--> "
+read CAPNAME
+clear
+
+
+
+echo -e $intro
+echo
+echo "Enter Your Wordlist File Location ? ex: root/rockyou.txt"
+echo
+echo -n "--> "
+read DICTNAME
+clear
+
+xterm -hold -geometry  100x30+0+0 -fg green -bg black -e aircrack-ng $CAPNAME -w $DICTNAME
+
+clear
