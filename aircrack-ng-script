@@ -20,6 +20,7 @@ echo -e "Enter Your CAP File Location ? ex: root/EXAMPLE_WIFI.cap"
 echo
 echo -n "--> "
 read CAPNAME
+CAPNAMEsp=$(echo "$CAPNAME" | sed "s/'//g")
 clear
 
 
@@ -30,8 +31,7 @@ echo "Enter Your Wordlist File Location ? ex: root/rockyou.txt"
 echo
 echo -n "--> "
 read DICTNAME
+DICTNAMEsp=$(echo "$DICTNAME" | sed "s/'//g")
 clear
-
-xterm -hold -geometry  100x30+0+0 -fg green -bg black -e aircrack-ng $CAPNAME -w $DICTNAME
-
+xterm -hold -geometry  100x30+0+0 -fg green -bg black -e aircrack-ng "$CAPNAMEsp" -w "$DICTNAMEsp"
 clear
